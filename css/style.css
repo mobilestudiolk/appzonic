@@ -24,7 +24,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-    color: #3f37c9;
+    color: #007BFF;
     outline: none;
     text-decoration: none;
 }
@@ -44,20 +44,20 @@ a:focus {
     font-weight: 600;
     letter-spacing: 1px;
     color: #ffffff;
-    background: #3f37c9;
+    background: #007BFF;
     border: 2px solid transparent;
     border-radius: 0;
-    box-shadow: inset 0 0 0 50px #3f37c9;
+    box-shadow: inset 0 0 0 50px #007BFF;
     transition: ease-out 0.3s;
     -webkit-transition: ease-out 0.3s;
     -moz-transition: ease-out 0.3s;
 }
 
 .btn:hover {
-    color: #3f37c9;
+    color: #007BFF;
     background: transparent;
-    box-shadow: inset 0 0 0 0 #3f37c9;
-    border-color: #3f37c9;
+    box-shadow: inset 0 0 0 0 #007BFF;
+    border-color: #007BFF;
 }
 
 #loader {
@@ -91,7 +91,7 @@ a:focus {
     width: 45px;
     height: 45px;
     border: 5px solid #dddddd;
-    border-top: 5px solid #3f37c9;
+    border-top: 5px solid #007BFF;
     border-radius: 50%;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
@@ -188,7 +188,7 @@ a:focus {
     }
     
     .navbar.nav-sticky .navbar-brand {
-        color: #3f37c9;
+        color: #007BFF;
     }
 
     .navbar-light .navbar-nav .nav-link,
@@ -206,12 +206,12 @@ a:focus {
 
     .navbar-light .navbar-nav .nav-link:hover,
     .navbar-light .navbar-nav .nav-link.active {
-        color: #111111;
+        color: #62a6ff;
     }
     
     .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
     .navbar-light.nav-sticky .navbar-nav .nav-link.active {
-        color: #3f37c9;
+        color: #007BFF;
     }
 }
 
@@ -222,7 +222,7 @@ a:focus {
     }
     
     .navbar .navbar-brand {
-        color: #3f37c9;
+        color: #007BFF;
     }
     
     .navbar .navbar-nav {
@@ -247,8 +247,11 @@ a:focus {
     width: 100%;
     margin-bottom: 45px;
     padding: 120px 0 0 0;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
     overflow: hidden;
-    background: linear-gradient(rgba(72, 149, 239, .95), rgba(114, 9, 183, .95)), url(../img/hero-bg.jpg);
+    background: linear-gradient(#000000, #007BFF), url(../img/hero-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -256,17 +259,36 @@ a:focus {
 
 .hero .container-fluid {
     padding: 0;
+    width: 100%;
+    flex: 1 1 auto;
 }
 
 .hero .hero-image {
     position: relative;
-    text-align: right;
-    padding-right: 75px;
+    text-align: center;
+    padding: 0 75px;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero .hero-image img {
-    max-width: 80%;
-    max-height: 80%;
+.hero .hero-image img,
+.hero .hero-image dotlottie-wc {
+    display: block;
+    width: 100%;
+    max-width: 1024px;
+    height: auto;
+}
+
+.hero .hero-image dotlottie-wc {
+    min-height: 420px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero .hero-content {
@@ -278,28 +300,35 @@ a:focus {
     flex-direction: column;
 }
 
+.hero .hero-content .hero-text {
+    max-width: 520px;
+}
+
 .hero .hero-text p {
     color: #ffffff;
-    font-size: 25px;
-    font-weight: 600;
-    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 .hero .hero-text h1 {
     color: #ffffff;
-    font-size: 60px;
+    font-size: 56px;
     font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
 
 .hero .hero-text h2 {
     display: inline-block;
     margin: 0;
-    height: 35px;
     color: #ffffff;
-    font-size: 35px;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.3;
 }
 
 .hero .hero-text .typed-text {
@@ -314,7 +343,7 @@ a:focus {
 
 .hero .hero-btn .btn {
     margin-top: 35px;
-    color: #3f37c9;
+    color: #007BFF;
     background: #ffffff;
     box-shadow: inset 0 0 0 50px #ffffff;
 }
@@ -340,10 +369,24 @@ a:focus {
 @media (max-width: 991.98px) {
     .hero {
         padding-top: 60px;
+        min-height: 65vh;
     }
     
     .hero .hero-content {
         padding: 0 15px;
+    }
+
+    .hero .hero-image {
+        padding: 30px 15px 0;
+        text-align: center;
+        min-height: 320px;
+        justify-content: center;
+    }
+    
+    .hero .hero-image dotlottie-wc {
+        max-width: 720px;
+        margin: 0 auto;
+        min-height: 320px;
     }
     
     .hero .hero-text p {
@@ -356,7 +399,7 @@ a:focus {
     
     .hero .hero-text h2 {
         font-size: 25px;
-        height: 25px;
+        line-height: 1.3;
     }
     
     .hero .hero-btn .btn {
@@ -369,6 +412,7 @@ a:focus {
     .hero {
         padding-top: 60px;
         padding-bottom: 60px;
+        min-height: auto;
     }
     
     .hero,
@@ -376,6 +420,14 @@ a:focus {
     .hero .hero-btn {
         width: 100%;
         text-align: center;
+    }
+
+    .hero .hero-image {
+        min-height: 260px;
+    }
+    
+    .hero .hero-image dotlottie-wc {
+        min-height: 260px;
     }
     
     .hero .hero-text p {
@@ -388,7 +440,7 @@ a:focus {
     
     .hero .hero-text h2 {
         font-size: 22px;
-        height: 22px;
+        line-height: 1.3;
     }
     
     .hero .hero-btn .btn {
@@ -408,7 +460,15 @@ a:focus {
     
     .hero .hero-text h2 {
         font-size: 18px;
-        height: 18px;
+        line-height: 1.3;
+    }
+
+    .hero .hero-image {
+        min-height: 220px;
+    }
+    
+    .hero .hero-image dotlottie-wc {
+        min-height: 220px;
     }
     
     .hero .hero-btn .btn {
@@ -446,7 +506,7 @@ a:focus {
     top: 11px;
     right: 0;
     left: -30px;
-    background: #3f37c9;
+    background: #007BFF;
     z-index: -1;
 }
 
@@ -457,7 +517,7 @@ a:focus {
     height: 3px;
     top: 11px;
     left: 3px;
-    background: #3f37c9;
+    background: #007BFF;
     z-index: 1;
 }
 
@@ -468,9 +528,20 @@ a:focus {
     font-weight: 700;
 }
 
+.section-header .section-note {
+    margin: 15px auto 0;
+    max-width: 640px;
+    font-size: 16px;
+    color: rgba(65, 65, 65, 0.85);
+}
+
 @media (max-width: 767.98px) {
     .section-header h2 {
         font-size: 30px;
+    }
+    
+    .section-header .section-note {
+        font-size: 15px;
     }
 }
 
@@ -539,7 +610,7 @@ a:focus {
 
 .about .progress .progress-bar {
     width: 0px;
-    background: #3f37c9;
+    background: #007BFF;
     border-radius: 10px;
     transition: 2s;
 }
@@ -572,7 +643,7 @@ a:focus {
     content: '';
     position: absolute;
     width: 2px;
-    background: #3f37c9;
+    background: #007BFF;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -604,7 +675,7 @@ a:focus {
     top: 48px;
     right: -8px;
     background: #ffffff;
-    border: 2px solid #3f37c9;
+    border: 2px solid #007BFF;
     border-radius: 16px;
     z-index: 1;
 }
@@ -636,7 +707,7 @@ a:focus {
     top: 44px;
     font-size: 16px;
     font-weight: 600;
-    color: #3f37c9;
+    color: #007BFF;
     text-transform: uppercase;
     letter-spacing: 1px;
     z-index: 1;
@@ -750,7 +821,7 @@ a:focus {
 }
 
 .service .service-item:hover {
-    box-shadow: inset 800px 0 0 0 #3f37c9;
+    box-shadow: inset 800px 0 0 0 #007BFF;
 }
 
 .service .service-icon {
@@ -760,14 +831,14 @@ a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #3f37c9;
+    border: 1px solid #007BFF;
     background: #ffffff;
 }
 
 .service .service-icon i {
     position: relative;
     font-size: 60px;
-    color: #3f37c9;
+    color: #007BFF;
     transition: .3s;
 }
 
@@ -835,10 +906,10 @@ a:focus {
     font-size: 14px;
     font-weight: 600;
     color: #ffffff;
-    background: #3f37c9;
+    background: #007BFF;
     border: 2px solid transparent;
     border-radius: 0;
-    box-shadow: inset 0 0 0 50px #3f37c9;
+    box-shadow: inset 0 0 0 50px #007BFF;
     transition: ease-out 0.3s;
     -webkit-transition: ease-out 0.3s;
     -moz-transition: ease-out 0.3s;
@@ -846,10 +917,10 @@ a:focus {
 
 .portfolio #portfolio-filter li:hover,
 .portfolio #portfolio-filter li.filter-active {
-    color: #3f37c9;
+    color: #007BFF;
     background: transparent;
-    box-shadow: inset 0 0 0 0 #3f37c9;
-    border-color: #3f37c9;
+    box-shadow: inset 0 0 0 0 #007BFF;
+    border-color: #007BFF;
 }
 
 .portfolio .portfolio-item {
@@ -883,63 +954,125 @@ a:focus {
 
 .portfolio .portfolio-text {
     position: relative;
-    height: 60px;
+    min-height: 60px;
     width: calc(100% - 30px);
     margin: -30px 15px 30px 15px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0 15px;
     background: #ffffff;
     box-shadow: 0 0 15px rgba(0, 0, 0, .12);
 }
 
 .portfolio .portfolio-text h3 {
-    width: calc(100% - 70px);
+    flex: 1 1 auto;
     font-size: 18px;
     font-weight: 600;
-    margin: 0 0 0 15px;
+    margin: 0;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .portfolio .portfolio-text a.btn {
-    width: 50px;
+    flex: 0 0 auto;
+    width: 80px;
     height: 50px;
-    padding: 0 0 2px 1px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 45px;
+    font-size: 12px;
     font-weight: 100;
 }
 
+.portfolio .portfolio-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.portfolio .portfolio-text .btn-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f3f6ff;
+    color: #007BFF;
+    font-size: 0;
+    transition: background .3s ease, color .3s ease;
+}
+
+.portfolio .portfolio-text .btn-icon i {
+    font-size: 20px;
+}
+
+.portfolio .portfolio-text .btn-icon:hover {
+    background: #e0ecff;
+}
+
+.portfolio .portfolio-text .btn-visit {
+    width: auto;
+    min-width: 110px;
+    height: 40px;
+    padding: 0 18px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: inset 0 0 0 50px #ffffff;
+    color: #007BFF;
+    border-color: #007BFF;
+    letter-spacing: 0;
+    text-transform: none;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .portfolio .portfolio-item:hover a.btn {
-    color: #3f37c9;
+    color: #007BFF;
     background: transparent;
-    box-shadow: inset 0 0 0 0 #3f37c9;
-    border-color: #3f37c9;
+    box-shadow: inset 0 0 0 0 #007BFF;
+    border-color: #007BFF;
 }
 
 
 /* Responsive adjustments */
 @media (max-width: 767px) {
     .portfolio .portfolio-text {
-        height: auto;
         flex-direction: column;
         align-items: flex-start;
-        padding: 10px;
+        justify-content: flex-start;
+        gap: 12px;
+        padding: 15px;
     }
     
     .portfolio .portfolio-text h3 {
         width: 100%;
-        margin: 0 0 10px 0;
+        margin: 0;
     }
     
-    .portfolio .portfolio-text a.btn {
+    .portfolio .portfolio-actions {
         width: 100%;
-        height: 40px;
-        font-size: 30px;
-        justify-content: flex-start;
-        padding-left: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .portfolio .portfolio-text .btn-visit {
+        flex: 1 1 100%;
+        width: 100%;
+        height: 42px;
+        justify-content: center;
+    }
+    
+    .portfolio .portfolio-text .btn-icon {
+        flex: 0 0 42px;
+        width: 42px;
+        height: 42px;
+    }
+    
+    .portfolio .portfolio-text .btn-icon i {
+        font-size: 18px;
     }
 }
 
@@ -953,7 +1086,7 @@ a:focus {
     width: 100%;
     margin: 45px 0;
     padding: 90px 0;
-    background: #3f37c9;
+    background: #007BFF;
 }
 
 .banner .container {
@@ -990,7 +1123,7 @@ a:focus {
 
 .banner .banner-text .btn {
     margin-top: 15px;
-    color: #3f37c9;
+    color: #007BFF;
     background: #ffffff;
     box-shadow: inset 0 0 0 50px #ffffff;
 }
@@ -1235,7 +1368,7 @@ a:focus {
 }
 
 .team .team-text h2 {
-    color: #3f37c9;
+    color: #007BFF;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 5px;
@@ -1274,7 +1407,7 @@ a:focus {
 }
 
 .team .team-item:hover {
-    box-shadow: inset 800px 0 0 0 #3f37c9;
+    box-shadow: inset 800px 0 0 0 #007BFF;
 }
 
 .team .team-item:hover .team-img img {
@@ -1324,7 +1457,7 @@ a:focus {
     position: relative;
     margin: 45px 0;
     padding: 90px 0;
-    background: #3f37c9;
+    background: #007BFF;
 }
 
 .testimonial .container {
@@ -1376,7 +1509,7 @@ a:focus {
 }
 
 .testimonial .testimonial-text h3 {
-    color: #3f37c9;
+    color: #007BFF;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -1414,7 +1547,7 @@ a:focus {
     position: relative;
     width: 100%;
     margin: 45px 0;
-    background: #3f37c9;
+    background: #007BFF;
 }
 
 .contact .container-fluid {
@@ -1425,7 +1558,7 @@ a:focus {
 .contact .contact-form {
     position: relative;
     padding: 90px 0 90px 45px;
-    background: #3f37c9;
+    background: #007BFF;
 }
 
 .contact .contact-form input {
@@ -1459,7 +1592,7 @@ a:focus {
 
 .contact .contact-form .btn {
     margin-top: 35px;
-    color: #3f37c9;
+    color: #007BFF;
     background: #ffffff;
     box-shadow: inset 0 0 0 50px #ffffff;
 }
@@ -1573,7 +1706,7 @@ a:focus {
 .footer {
     position: relative;
     margin-top: 45px;
-    background: #3f37c9;
+    background: #007BFF;
 }
 
 .footer .container-fluid {
