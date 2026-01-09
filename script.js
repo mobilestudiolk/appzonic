@@ -36,9 +36,16 @@ function calculatePrice() {
     const finalTotalPrice = totalPriceWithoutExtras + optionalCost;
   
     // Update results in the UI
-    document.getElementById('basePrice').querySelector('span').textContent = basePrice.toLocaleString();
-    document.getElementById('discount').querySelector('span').textContent = discount.toLocaleString();
-    document.getElementById('optionalCost').querySelector('span').textContent = optionalCost.toLocaleString();
-    document.getElementById('totalPrice').querySelector('span').textContent = finalTotalPrice.toLocaleString();
+    const setValue = (id, value) => {
+      const target = document.querySelector(`#${id} .value span`);
+      if (target) {
+        target.textContent = value.toLocaleString();
+      }
+    };
+  
+    setValue('basePrice', basePrice);
+    setValue('discount', discount);
+    setValue('optionalCost', optionalCost);
+    setValue('totalPrice', finalTotalPrice);
   }
   
